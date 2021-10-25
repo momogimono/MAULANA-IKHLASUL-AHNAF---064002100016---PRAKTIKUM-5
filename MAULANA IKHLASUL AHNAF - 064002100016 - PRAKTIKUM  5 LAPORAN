@@ -1,0 +1,112 @@
+
+@author: User
+NAMA : MAULANA IKHLASUL AHNAF
+NIM : 064002100016
+"""
+
+
+
+ulangin="y"
+while ulangin=="y":
+    print("""
+----------------------------------------------------
+SELAMAT DATANG DI TRANS STUDIO JAKARTA
+----------------------------------------------------
+silahkan masukkan Account ID dan password
+Account ID 
+Password 
+    """)
+    user=input("Masukkan Account ID :")
+    password=input("Masukkan password :")
+    if user=="maulana" and password=="12345678":
+        ngulang="y"
+        while ngulang=="y":
+            print("""
+----------------------------------------------------
+( ˘▽˘)っ♨ SELAMAT DATANG DI TRANS STUDIO JAKARTA
+----------------------------------------------------
+silahkan pilih pembelian tiket
+ 
+A.TIKET COUPLE TRIP
+
+----------------------------------------------------
+            """)
+            pilihtiket = input("Silahkan pilih pembelian tiket dengan memasukkan abjad dari list di atas :")
+            
+            
+            if pilihtiket == "a" or pilihtiket == "A":
+                ulangtiketsapi = "y"
+                while ulangtiketsapi == "y":
+                    print("""
+------------------------------------
+TIKET COUPLE TRIP
+------------------------------------
+*TIKET COUPLE TRIP
+Anda Mendapatkan beberapa fasilitas jika membeli TIKET COUPLE TRIP
+- mendapatkan free kartu untuk akses membeli makanan dan minuman(Rp.100.000)
+- free acces to all game dari kartu itu
+- bisa ditukar dengan merchandise yang tersedia di loket penukaran
+------------------------------------                    
+                    """)
+                    pilihan = input("Silahkan Tulis next untuk melanjutkan pengisian data :")
+                    
+                    if pilihan == "next":
+                        stop = "y"
+                        while stop == "y":
+                            from datetime import datetime
+                            
+                            current = datetime.now()
+                            tahun = current.year
+                            bulan = current.month
+                            hari = current.day
+                            jumlahorang = int(input("Jumlah orang :"))
+                            total = []
+                            if jumlahorang > 4:
+                               print("Jumlah maksimal untuk satu tiket 4 orang")
+                               break
+                            nama = []
+                            umur = []
+                            total = 0
+                            for i in range(jumlahorang):
+                                print("\nData ke-", i + 1)
+                                nama_pengunjung = input("Masukkan nama :")
+                                umur_pengunjung = int(input("Masukkan umur :"))
+                                if umur_pengunjung <= 2:
+                                   total += 0
+                                   print("tiket GRATIS!")
+                                elif umur_pengunjung >= 3 and umur_pengunjung <= 12:
+                                   total += 14
+                                   print("tiket sebesar $14")
+                                elif umur_pengunjung >=13 and umur_pengunjung < 65:
+                                   total += 23
+                                   print("tiket sebesar $23")
+                                else:
+                                   total += 18
+                                   print("tiket sebesar $18")
+
+                                     
+                                print("Total Pembayaran : $", total)
+                               
+                            jumlahbayar = int(input("Masukan uang :$"))
+                            for i in range(umur_pengunjung ):
+                                print("----------------------------------------------")
+                                print("Tiket COUPLE TRIP")
+                                print("----------------------------------------------")
+                                print("{}/{}/{}".format(hari, bulan, tahun))
+                                for cetaknama in nama:
+                                    print("nama : {}".format(cetaknama))
+                                for cetakumur in umur:
+                                    print("umur : {}".format(cetakumur))
+                                print("----------------------------------------------")
+                                print("Harga : $", total)
+                                print("Total Harga : $", total)
+                                print("Kembali : $", jumlahbayar - total)
+                                print("----------------------------------------------")
+                                print("Terimakasih")
+                                print("----------------------------------------------")
+                                ulangtiketsapi= input("Ketik back untuk kembali :")
+                                break
+
+            else:
+                print("Account ID dan password salah")
+                ulangin=input("Apakah anda ingin login kembali y/n :")
